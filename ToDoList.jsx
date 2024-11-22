@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function ToDoList() {
   const [tasks, setTasks] = useState([
-    { text: "Read a book", completed: false },
+    { text: "Keep learning React", completed: false },
     { text: "Go to gym", completed: false },
     { text: "Find a job", completed: false },
   ]);
@@ -45,6 +45,15 @@ function ToDoList() {
   function deleteTask(index) {
     setTasks(tasks.filter((_, i) => i !== index));
   }
+
+  function capitalizeFirstWord(text) {
+    const words = text.split(" ");
+    if (words.length > 0) {
+      words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1);
+    }
+    return words.join(" ");
+  }
+
   return (
     <div className="mt-5">
       <h1>
@@ -67,8 +76,7 @@ function ToDoList() {
                 textDecoration: task.completed ? "line-through" : "none",
               }}
             >
-              {" "}
-              {task.text}{" "}
+              {capitalizeFirstWord(task.text)}
             </span>
             <button
               onClick={() => deleteTask(index)}
