@@ -71,7 +71,7 @@ function ToDoList() {
               className="me-3 mb-4"
             />
             <span
-              className="me-3 fw-bold fs-3"
+              className="me-5 fw-bold fs-3"
               style={{
                 textDecoration: task.completed ? "line-through" : "none",
               }}
@@ -80,7 +80,7 @@ function ToDoList() {
             </span>
             <button
               onClick={() => deleteTask(index)}
-              className="btn btn-danger my-1 py-0"
+              className="btn btn-danger my-1 py-0 fw-bold"
             >
               Delete
             </button>
