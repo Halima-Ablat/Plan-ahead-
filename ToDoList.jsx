@@ -22,7 +22,8 @@ function ToDoList() {
     "November",
     "December",
   ];
-  const currentMonth = new Date().getMonth();
+  const currentMonthIndex = new Date().getMonth();
+  const nextMonthIndex = (currentMonthIndex + 1) % 12;
 
   function handleInputChange(event) {
     setNewTask(event.target.value);
@@ -58,7 +59,7 @@ function ToDoList() {
     <div className="mt-5">
       <h1>
         Next-Month-To-Do-List{" "}
-        <span className="fs-5 ms-3">({months[currentMonth]})</span>
+        <span className="fs-5 ms-3">({months[nextMonthIndex]})</span>
       </h1>
 
       <ul style={{ listStyleType: "none" }} className="mt-5">
